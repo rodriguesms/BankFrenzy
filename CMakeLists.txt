@@ -10,7 +10,7 @@ find_package(Qt6 COMPONENTS
         Core
         REQUIRED)
 
-add_executable(BankFrenzy main.cpp src/dice_management.h)
+add_executable(BankFrenzy main.cpp src/Engine/dice_management.h src/Player/Player.cpp src/Player/Player.h src/Properties/Property.cpp src/Properties/Property.h)
 target_link_libraries(BankFrenzy
         Qt::Core
         )

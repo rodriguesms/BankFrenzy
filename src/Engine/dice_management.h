@@ -5,11 +5,15 @@
 
 #define DICE_MAX_RANGE 6
 #define DICE_MIN_RANGE 1
+#define EQUAL_ROLLS_MAX_TO_PRISON 3
 
 struct DiceRolls {
     unsigned int dice1;
     unsigned int dice2;
 };
+
+    /* If a player roll the dices three times, and both dices are
+     * the same for each of the three rolls, he goes to the prison */
 
 struct RollReturn {
     std::vector<DiceRolls> rolls;
@@ -46,7 +50,7 @@ RollReturn rollDices(){
     rollReturn.rolls.push_back(diceRoll);
     rollReturn.jumps = diceRoll.dice1 + diceRoll.dice2;
 
-    while(isThisRollEqual(diceRoll) && equalRolls<3){
+    while(isThisRollEqual(diceRoll) && (equalRolls < EQUAL_ROLLS_MAX_TO_PRISON)){
         equalRolls++;
         diceRoll.dice1=randomDiceValue();
         diceRoll.dice2=randomDiceValue();
@@ -54,7 +58,7 @@ RollReturn rollDices(){
         rollReturn.jumps = diceRoll.dice1 + diceRoll.dice2;
     }
 
-    rollReturn.goToPrison = (equalRolls == 3);  // triple equal rolls -> go to prison
+    rollReturn.goToPrison = (equalRolls == EQUAL_ROLLS_MAX_TO_PRISON);  // triple equal rolls -> go to prison
 
     return rollReturn;
 }
