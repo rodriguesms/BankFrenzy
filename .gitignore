@@ -1,4 +1,5 @@
-cmake-build-debug
+build-BankFrenzy-Desktop_Qt_6_2_2_GCC_64bit-Debug
+BankFrenzy/CMakeLists.txt.user
 # Default ignored files
 .idea/shelf/
 .idea/workspace.xml
