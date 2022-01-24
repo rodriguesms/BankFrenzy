@@ -15,11 +15,11 @@ find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
 
 set(PROJECT_SOURCES
-        main.cpp
-        bankfrenzy.cpp
-        bankfrenzy.h
-        bankfrenzy.ui
-)
+        src/main/main.cpp
+        src/main/bankfrenzy.cpp
+        src/main/bankfrenzy.h
+        src/main/bankfrenzy.ui
+        src/Engine/diceManagement.h src/Properties/Property.cpp src/Properties/Property.h)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(BankFrenzy
