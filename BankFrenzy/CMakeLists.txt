@@ -19,7 +19,7 @@ set(PROJECT_SOURCES
         src/main/bankfrenzy.cpp
         src/main/bankfrenzy.h
         src/main/bankfrenzy.ui
-        src/Engine/diceManagement.h src/Properties/Property.cpp src/Properties/Property.h)
+        src/Engine/diceManagement.h src/Properties/Property.cpp src/Properties/Property.h src/Player/Player.cpp src/Player/Player.h)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(BankFrenzy
